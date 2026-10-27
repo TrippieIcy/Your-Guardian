@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retour vers l'app</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #0e1116; color: #eee;
+           display: flex; min-height: 100vh; align-items: center; justify-content: center;
+           text-align: center; margin: 0; padding: 24px; }
+    a { color: #e8c766; }
+  </style>
+</head>
+<body>
+  <div>
+    <p>Retour vers l'application…</p>
+    <p><a id="open" href="destinybuilds://callback">Ouvrir l'application</a></p>
+    <p style="opacity:.6;font-size:.9em">Tu peux fermer cet onglet une fois l'app ouverte.</p>
+  </div>
+  <script>
+    // Transmet ?code=...&state=... à l'app via son lien personnalisé.
+    var target = 'destinybuilds://callback' + window.location.search;
+    document.getElementById('open').href = target;
+    window.location.replace(target);
+  </script>
+</body>
+</html>
